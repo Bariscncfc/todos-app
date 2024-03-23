@@ -83,7 +83,7 @@ function App() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <a href="#">
+            <a href="/">
               <div className="flex items-center mb-2 text-2xl font-bold  text-indigo-600 dark:text-white tracking-tight">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
