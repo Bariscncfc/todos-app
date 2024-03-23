@@ -4,6 +4,7 @@ import { addTodo, remove } from "./features/todoSlice";
 import { useAppDispatch, useAppSelector } from "./store";
 import { motion } from "framer-motion";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 function App() {
   const todos = useAppSelector((state) => state.todos);
@@ -21,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className=" container mx-auto flex flex-col justify-center h-screen">
+    <div className=" container mx-auto flex flex-col justify-center h-screen px-8">
       <Hero />
       <Clock />
       <form className="flex items-center">
@@ -74,7 +75,7 @@ function App() {
           </svg>
         </button>
       </form>
-      <div className=" flex grid grid-cols-4 gap-4 my-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 my-6">
         {todos.map((todo) => (
           <motion.div
             className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
@@ -83,35 +84,35 @@ function App() {
             whileTap={{ scale: 0.9 }}
           >
             <a href="#">
-              
-                <div className="flex items-center mb-2 text-2xl font-bold tracking-tight text-indigo-600 dark:text-white tracking-tight">
+              <div className="flex items-center mb-2 text-2xl font-bold  text-indigo-600 dark:text-white tracking-tight">
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-black mr-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>Task:
-                </div>
-                <h5 className="mb-2 text-xl font-semibold tracking-tight text-black dark:text-white">
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-black mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Task:
+              </div>
+              <h5 className="mb-2 text-xl font-semibold tracking-tight text-black dark:text-white">
                 {todo.title}
               </h5>
             </a>
             <button
               onClick={() => onDelete(todo.id)}
-              className="inline-flex items-center rounded-full py-2 px-4 text-sm font-medium text-center text-white bg-red-500  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="inline-flex items-center rounded-full py-2 md:px-6 px-4 text-sm font-medium text-center text-white bg-red-500  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Delete Task
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="md:h-4 md:w-4 w-5 h-5 ml-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -127,6 +128,7 @@ function App() {
           </motion.div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
