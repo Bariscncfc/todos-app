@@ -2,6 +2,8 @@
 
 Responsive Todo manage App with ReactJs-Redux-TypeScript.
 
+[live](https://webapptodos.netlify.app/)
+
 ## Build Setup
 
 # install dependencies
